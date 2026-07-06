@@ -1,80 +1,51 @@
 # Settlement Gate
 
-> Status: early-stage investigation / public repository / not yet independently validated.
+Settlement Gate is an early-stage investigation into whether completed sentences have recoverable structural addresses, and whether faithful translations preserve those addresses.
 
-## Why “Settlement Gate”?
+This repository contains the working packet, demo sentences, A-packet material, resolver outputs, bilingual pressure tests, and presentation material for a private early-stage discussion.
 
-Because every completed sentence settles something.
-
-And because not every settlement should be allowed to govern action without inspection.
-
-The sentence lands.
-
-The gate asks whether that landing is earned.
-
-## Core working claim
-
-Settlement Gate is an early-stage investigation into whether completed sentences have recoverable structural addresses, and whether faithful translations preserve those addresses even when the words and grammar change.
-
-The practical possibility is a multilingual sentence-auditing layer for AI output, translation, legal text, policy language, and agent instructions.
-
-This repository is not presenting the system as proven. It is a working packet, demo set, and validation pathway for pressure-testing the idea safely.
+Status: exploratory / confidential / not yet independently validated as a finished theory.
 
 ## What this repository contains
 
-This repository is organised to hold:
+- The full Settlement Gate working packet.
+- Demo sentences from the Galway / PorterShed material.
+- A-packet material used to slow sentence interpretation down.
+- Resolver outputs and compact cell ledgers.
+- Bilingual English-Irish pressure-test material.
+- Presentation notes and a direct ask to Anthony / PorterShed.
+- Candidate validation and product-development pathways.
 
-- the full working Markdown packet;
-- slide and teleprompter material for the Anthony / PorterShed presentation;
-- Galway / PorterShed English and Irish demo sentences;
-- A1–A6 packet material;
-- resolver outputs and compact cell ledgers;
-- future validation protocols and results;
-- early product hypotheses and commercial questions.
+## Core working claim
 
-## The basic movement
+The working claim is that completed sentences may have recoverable structural addresses. These addresses are not ordinary summaries or topics. They are intended to show what a sentence settles, where attention lands, and what structural work the sentence performs.
 
-```text
-Sentence
-→ A1–A6 inspection packet
-→ Resolver
-→ Structural address
-→ Sentence receipt
-```
+A related working claim is that faithful translations should preserve the same structural landing, even where the surface words and grammar change.
 
-The A-packet is not the whole theory. It is the instrument that slows a sentence down long enough for its commitments to become visible.
+## Current status
 
-The receipt is not a summary. It is the audit trace of what the sentence has settled, what it governs, where it holds, and which rival reading must not win.
-
-## Current caution
-
-This repository may contain early-stage intellectual property, unpublished methods, and commercially sensitive exploratory material.
-
-Do not treat the contents as:
-
-- independently validated proof;
-- a finished linguistic theory;
-- legal advice;
-- an open-source grant of rights;
-- a commercially validated product.
-
-Until protection and review are clarified, sensitive mechanism details, disclosure history, reviewer names, and commercial strategy should stay out of public files.
+This repository is a working packet for private discussion and pressure testing. It is an early-stage investigation, not a finished theorem, validated product, or independently confirmed framework.
 
 ## Repository map
 
-See [`REPO_WIREFRAME.md`](REPO_WIREFRAME.md) for the target folder structure and where each extracted file from the zip should go.
+- `00_packet/` keeps the original full working packet and a concise summary.
+- `01_presentation/` contains the slide plan, teleprompter script, ask document, and design notes.
+- `02_demo_sentences/` contains Galway / PorterShed demo sentences and bilingual pairs.
+- `03_a_packets/` contains A1-A6 packet material and a reusable template.
+- `04_resolver_outputs/` contains resolver results, compact ledgers, and address validation material.
+- `05_validation/` contains candidate protocols and future validation tests.
+- `06_product/` contains product hypotheses, use cases, and early schema ideas.
+- `07_private/` contains private-facing planning templates and disclosure notes.
+
+## Important caution
+
+This material should not be treated as proven, legally protected, or commercially validated yet. It may contain early-stage intellectual property and unpublished exploratory methods. Any public disclosure, technical review, or commercial conversation should be handled carefully.
 
 ## Next validation steps
 
-The next useful work is to:
-
-1. protect the core idea before wider disclosure;
-2. identify trusted first reviewers;
-3. test whether A-packets can be produced consistently;
-4. test whether independent resolvers recover the same addresses;
-5. test whether faithful translations preserve structural landings;
-6. explore the smallest commercially useful sentence-auditing tool.
-
-## Private-first recommendation
-
-This repository is currently public. If the material is not yet protected, consider making the repository private before uploading the full packet or detailed mechanism files.
+- Run independent reviewer tests on source sentences.
+- Run blind A-packet-to-resolver tests.
+- Compare source and translation addresses across more language pairs.
+- Test model-to-model reproducibility.
+- Record disagreements and rival readings.
+- Identify the smallest useful product or validation demo.
