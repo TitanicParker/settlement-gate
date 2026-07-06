@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settlement Gate — What We Haven't Told Them</title>
+<style>
+:root{--bg:#10191e;--paper:#fff8ec;--card:#f6eddf;--ink:#111b20;--muted:#637179;--blue:#255d72;--rust:#a45d3a;--gold:#d3a64f;--line:#d7cbb9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 12%,rgba(211,166,79,.16),transparent 30%),radial-gradient(circle at 90% 86%,rgba(37,93,114,.23),transparent 36%),var(--bg);color:var(--paper);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{width:min(1180px,92vw);margin:0 auto;padding:34px 0 80px}.topbar{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}.mark{display:inline-flex;gap:.55rem;align-items:center;border:1px solid rgba(255,248,236,.22);background:rgba(255,248,236,.08);backdrop-filter:blur(10px);border-radius:999px;padding:9px 14px;color:var(--paper);font-weight:950;letter-spacing:.06em;text-transform:uppercase;font-size:.76rem}.dot{width:9px;height:9px;border-radius:50%;background:var(--gold)}.links{display:flex;gap:9px;flex-wrap:wrap}.links a{border:1px solid rgba(255,248,236,.2);background:rgba(255,248,236,.08);border-radius:999px;color:var(--paper);padding:10px 13px;text-decoration:none;font-weight:900}h1{font-size:clamp(3.1rem,8.2vw,8rem);line-height:.84;letter-spacing:-.08em;margin:34px 0 18px;max-width:1010px}.lede{font-size:clamp(1.18rem,2.4vw,1.8rem);line-height:1.2;color:#e9dcc9;max-width:930px;font-weight:780;letter-spacing:-.035em}.notice{margin-top:28px;border:1px solid rgba(255,248,236,.2);border-left:8px solid var(--gold);border-radius:26px;background:rgba(255,248,236,.09);padding:22px 24px;color:#f8ecda;font-size:1.08rem;line-height:1.48;max-width:980px}.track{height:5px;background:linear-gradient(90deg,var(--gold),var(--rust),var(--blue));border-radius:999px;margin:34px 0 32px}.toc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:0 0 26px}.toc a{display:block;text-decoration:none;background:rgba(255,248,236,.08);border:1px solid rgba(255,248,236,.16);border-radius:20px;color:var(--paper);padding:15px 16px;font-weight:900}.section{background:var(--paper);color:var(--ink);border:1px solid rgba(255,248,236,.22);border-radius:34px;padding:clamp(24px,4vw,44px);margin-top:24px;box-shadow:0 32px 90px rgba(0,0,0,.26)}.section.dark{background:#17242a;color:var(--paper);border-color:rgba(255,248,236,.15)}.section h2{font-size:clamp(2.2rem,5vw,4.5rem);line-height:.9;letter-spacing:-.07em;margin:.05em 0 .35em}.section h3{font-size:clamp(1.25rem,2.3vw,1.75rem);line-height:1.04;letter-spacing:-.035em;color:var(--blue);margin:1.2em 0 .35em}.dark h3{color:var(--gold)}.section p{font-size:1.09rem;line-height:1.58;color:#27363c;max-width:900px}.dark p{color:#efe3d2}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:20px}.dark .card{background:rgba(255,248,236,.08);border-color:rgba(255,248,236,.15)}.card strong{display:block;color:var(--rust);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.dark .card strong{color:var(--gold)}.card p{font-size:1rem;line-height:1.42;margin:0;color:#2b3940}.dark .card p{color:#f0e2cf}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#111b20;color:#fff8ec;border-radius:24px;padding:22px;overflow:auto;font-size:1.02rem;line-height:1.55;margin:18px 0}.rail{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin:22px 0}.rail .box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;font-weight:900;color:var(--blue)}.rail .arrow{font-size:2.4rem;color:var(--rust);font-weight:950}.dark .rail .box{background:rgba(255,248,236,.08);border-color:rgba(255,248,236,.16);color:var(--paper)}.tagline{font-size:clamp(1.7rem,4vw,3.2rem);line-height:1;letter-spacing:-.055em;font-weight:950;color:var(--blue);margin:22px 0}.dark .tagline{color:var(--gold)}.danger{border-left:7px solid var(--rust);padding:18px 20px;background:#fff;border-radius:22px;margin:18px 0}.danger p{margin:0}.dark .danger{background:rgba(255,248,236,.08)}.list{display:grid;gap:10px;margin:18px 0}.item{display:flex;gap:12px;align-items:flex-start}.num{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:950}.dark .num{background:var(--gold);color:#111b20}.closing{font-size:clamp(2rem,5vw,4.2rem);line-height:.96;letter-spacing:-.065em;font-weight:950;margin-top:12px;color:var(--paper)}footer{margin-top:28px;color:#d9cbb9;font-size:.95rem}@media(max-width:920px){.toc,.grid{grid-template-columns:1fr 1fr}.rail{grid-template-columns:1fr}.rail .arrow{transform:rotate(90deg);justify-self:center}}@media(max-width:640px){.toc,.grid{grid-template-columns:1fr}main{padding-top:22px}.section{border-radius:24px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar"><div class="mark"><span class="dot"></span>What We Haven't Told Them</div><nav class="links"><a href="index.html">Landing</a><a href="anthony.html">Deck</a><a href="quick.html">Quick Takeaway</a><a href="examples.html">Worked Examples</a><a href="chew.html">Chew the Cud</a></nav></div>
+  <h1>There is a larger system under the surface.</h1>
+  <p class="lede">The public presentation says: every completed sentence settles something. The white paper says more: Settlement Gate is a protocol for making completion observable before language is allowed to stand, continue, or act.</p>
+  <div class="notice">This page is not the pitch. It is the second layer: the things we have not yet said out loud because they are too large for the first meeting, too formal for the deck, or too consequential to present as a finished claim.</div>
+  <div class="track" aria-hidden="true"></div>
+  <nav class="toc" aria-label="Page sections"><a href="#one">1. Not just a metaphor</a><a href="#two">2. The receipt system</a><a href="#three">3. The governance claim</a><a href="#four">4. The part not proved</a></nav>
+
+  <section class="section" id="one">
+    <h2>1. We have not told them this is a gate.</h2>
+    <p>So far, the presentation has been gentle: sentence, track, train, address, packet, receipt. That is the right first surface. But the deeper claim is sharper. Settlement Gate is not merely a way to describe sentences after reading them. It is a proposed gate between candidate language and trusted continuation.</p>
+    <p>The white paper's central move is that language should not be treated as safe merely because it is fluent, grammatical, relevant, or plausible. A sentence may sound complete while producing what the paper calls a false landing: a confident remainder without a valid path from source, authority, evidence, scope, or condition to the conclusion.</p>
+    <div class="rail"><div class="box">Candidate sentence</div><div class="arrow">→</div><div class="box">Permission to stand, continue, or act</div></div>
+    <p>The missing middle is the gate. The sentence must show what it settled, what it governed, what work it performed, where that work holds, what remains, and what rival reading was defeated.</p>
+    <div class="tagline">The sentence is not approved because it sounds finished. It is approved only if its landing is earned.</div>
+  </section>
+
+  <section class="section dark" id="two">
+    <h2>2. We have not told them the packet becomes a receipt.</h2>
+    <p>The A-packet is only the entry instrument. The white paper goes further. It turns the sentence into a receipt-bearing object: source text, A1 to A6, X→Y traversal, axis recovery, cell landing, rival-pressure check, risk flags, and action permission.</p>
+    <div class="formula">Sentence surface
+→ Candidate landing
+→ A-packet address
+→ X→Y traversal
+→ Operator / Orientation / Remainder
+→ 54-cell display
+→ Rival-pressure check
+→ Settlement receipt
+→ Action permission</div>
+    <div class="grid">
+      <div class="card"><strong>A-packet</strong><p>What is said, governed, done, scoped, left, and excluded.</p></div>
+      <div class="card"><strong>X→Y traversal</strong><p>What the sentence takes up and what it leaves standing.</p></div>
+      <div class="card"><strong>Three axes</strong><p>Operator, Orientation, and Remainder: the work, the direction, and the residue.</p></div>
+      <div class="card"><strong>54-cell space</strong><p>A proposed map of completion forms, not a topic table.</p></div>
+      <div class="card"><strong>Rival pressure</strong><p>The tempting reading that must remain visible but defeated.</p></div>
+      <div class="card"><strong>Action permission</strong><p>Proceed, Revise, Escalate, Block, or Request evidence.</p></div>
+    </div>
+    <p>That is much bigger than a nice way to inspect examples. It is a receipt protocol for sentences that matter.</p>
+  </section>
+
+  <section class="section" id="three">
+    <h2>3. We have not told them the real AI claim.</h2>
+    <p>The presentation says LLMs predict the train. The white paper says the practical governance problem is not only hallucination. It is false settlement.</p>
+    <div class="danger"><p><strong>False settlement:</strong> a sentence leaves something standing that the source, scope, authority, evidence, or condition has not earned.</p></div>
+    <p>This matters most when language becomes operational: tool use, refunds, legal notices, medical or financial guidance, policy decisions, access control, proof steps, institutional communications, and agent instructions.</p>
+    <div class="grid">
+      <div class="card"><strong>Review → approval</strong><p>A model turns an open request into an approved state.</p></div>
+      <div class="card"><strong>Possibility → permission</strong><p>A policy that may allow something becomes a direct authorisation.</p></div>
+      <div class="card"><strong>Support → proof</strong><p>A source that supports a claim is made to prove it.</p></div>
+      <div class="card"><strong>Condition → action</strong><p>A visible verb causes an agent to act before the condition is satisfied.</p></div>
+      <div class="card"><strong>Scope → universality</strong><p>A local claim is inherited as if it held everywhere.</p></div>
+      <div class="card"><strong>Fluency → trust</strong><p>A sentence is trusted because it sounds lawful, not because it has shown its route.</p></div>
+    </div>
+    <p>The strongest governance sentence is simple:</p>
+    <div class="tagline">No action from unearned settlement.</div>
+  </section>
+
+  <section class="section dark" id="four">
+    <h2>4. We have not told them the full formal ambition.</h2>
+    <p>The public surface has not yet said that Settlement Gate proposes a finite settlement space generated by three axes: six Operators, three Orientations, and three Remainders.</p>
+    <div class="formula">6 Operators × 3 Orientations × 3 Remainders = 54 proposed landing cells</div>
+    <div class="grid">
+      <div class="card"><strong>Operators</strong><p>Distinction, Expansion, Relation, Correction, Integration, Closure.</p></div>
+      <div class="card"><strong>Orientations</strong><p>Toward, Across, Away.</p></div>
+      <div class="card"><strong>Remainders</strong><p>Is, With, Does.</p></div>
+    </div>
+    <p>That sounds like a grand claim, so it has to be handled carefully. The white paper does not need to pretend the space is proven universal. Its stronger, safer claim is procedural: completed sentences can be tested for recoverable axes, stable landings, rival pressure, strain, and false-settlement warnings.</p>
+    <p>The thing not said in the meeting is that the system is falsifiable. It can fail if A-packets cannot be built, if axes cannot be recovered, if disagreement is random rather than local, if source-language packets do not hold, or if a 55th-cell pressure appears repeatedly and cannot be absorbed without distortion.</p>
+  </section>
+
+  <section class="section" id="five">
+    <h2>5. We have not told them this is also a writing discipline.</h2>
+    <p>The product surface points toward audit. The deeper system points toward composition. Once a writer can see settlement, the writer can compose with structural intention.</p>
+    <div class="list">
+      <div class="item"><span class="num">1</span><p>A writer can choose whether a sentence should place, open, relate, correct, integrate, or close.</p></div>
+      <div class="item"><span class="num">2</span><p>A teacher can ask what the next sentence is allowed to inherit.</p></div>
+      <div class="item"><span class="num">3</span><p>A lawyer can ask whether a clause has hidden scope, authority, exception, or condition.</p></div>
+      <div class="item"><span class="num">4</span><p>An AI system can ask what sentence licenses an action before the action is executed.</p></div>
+      <div class="item"><span class="num">5</span><p>A proof can be read as a chain of earned remainders rather than a chain of fluent assertions.</p></div>
+    </div>
+    <p>This is why the idea feels bigger than the first deck can carry. It is not just a sentence audit. It is a theory of responsible continuation.</p>
+  </section>
+
+  <section class="section dark" id="six">
+    <h2>6. We have not told them what must stay protected.</h2>
+    <p>The white paper contains the product, the method, the risk frame, the validation path, and the disciplined limits. The public presentation should therefore keep doing what it is doing: show enough for recognition, not enough to flatten the idea into a casual research dump.</p>
+    <div class="grid">
+      <div class="card"><strong>Say now</strong><p>Sentences settle. A-packets expose the track. Receipts make commitments inspectable.</p></div>
+      <div class="card"><strong>Hold back</strong><p>The full registry, validation architecture, and operational gate should be handled carefully.</p></div>
+      <div class="card"><strong>Ask for help</strong><p>Protect, test, and commercialise safely before turning the full system outward.</p></div>
+    </div>
+    <p class="closing">What we have not told them is that the deck is only the doorway. The real object is a gate for language that wants to govern action.</p>
+  </section>
+
+  <footer>Source basis: Settlement Gate white paper, live PorterShed deck, worked examples, Quick Takeaway packet, and Chew the Cud essay.</footer>
+</main>
+</body>
+</html>
