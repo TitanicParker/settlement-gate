@@ -10,8 +10,12 @@ Every completed sentence settles something. Settlement Gate holds open the momen
 
 ## Presentation routes
 
-- **Anthony — View Deck:** a polished browser-based slide deck for the listener.
+- **Audience — View Deck:** a polished browser-based slide deck for listeners.
 - **Liam — Speaker Notes:** a presenter station carrying the 30-minute script, minute markers, and slide-card cues.
+- **Quick Takeaway:** a fast track-disclosure layer showing original sentence, address, rails, and shortcut.
+- **Worked Examples:** an interactive packet view for the 20 sentence landings.
+- **Chew the Cud:** a slower essay route for the bigger idea.
+- **What We Haven't Told Them:** the second layer: gate, receipts, AI governance claim, and disciplined limits.
 
 ## Current spine
 
