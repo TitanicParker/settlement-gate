@@ -13,7 +13,7 @@
   <div class="topbar"><div class="mark"><span class="dot"></span>Minimal System</div><nav class="links"><a href="index.html">Landing</a><a href="audience.html">Deck</a><a href="quick.html">Quick Takeaway</a><a href="examples.html">Worked Examples</a><a href="what-we-havent-told-them.html">Unsaid Layer</a></nav></div>
   <h1>The whole machine in one file.</h1>
   <p class="lede">A compact spine for Settlement Gate: sentence as settlement event, A1–A6 address, X→Y traversal, three-axis recovery, 54 cells, receipt, and stacking.</p>
-  <div class="hero">This is the system backup: small enough to hold in one page, strong enough to recover the geometry of intelligibility. The page first gives a readable map, then loads the source Markdown when the repo-root file is present.</div>
+  <div class="hero">This is the system backup: small enough to hold in one page, strong enough to recover the geometry of intelligibility. The page first gives a readable map, then finds and loads the source Markdown from the repo root.</div>
   <div class="track" aria-hidden="true"></div>
 
   <section class="grid" aria-label="Minimal system cards">
@@ -55,17 +55,34 @@ Hidden form:
 The correction has been done here.</div>
   </section>
 
-  <div class="status" id="status">Loading source Markdown from the repo root…</div>
+  <div class="status" id="status">Looking for the Minimal System Markdown in the repo root…</div>
   <article class="article" id="article" hidden></article>
   <div class="source" id="source"></div>
 </main>
 <script>
-const sourcePath='settlement_gate_minimal_system_backup_xy.md';
+const repo='TitanicParker/settlement-gate';
+const preferred=[
+  'settlement_gate_minimal_system_backup_xy.md',
+  'settlement_gate_minimal_system_backup.md',
+  'minimal_system_backup_xy.md',
+  'minimal-system-backup-xy.md',
+  'settlement-gate-minimal-system-backup-xy.md',
+  'Settlement_Gate_Minimal_System_Backup_XY.md'
+];
 const statusEl=document.getElementById('status'),articleEl=document.getElementById('article'),sourceEl=document.getElementById('source');
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
 function inline(s){return esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/`(.+?)`/g,'<code>$1</code>')}
 function mdToHtml(md){let lines=md.replace(/\r\n/g,'\n').split('\n'),out=[],inCode=false,code=[],para=[],table=[];function flushPara(){if(para.length){out.push('<p>'+inline(para.join(' '))+'</p>');para=[]}}function flushCode(){out.push('<pre><code>'+esc(code.join('\n'))+'</code></pre>');code=[]}function flushTable(){if(!table.length)return;const rows=table.filter(r=>!/^[\s|:-]+$/.test(r));out.push('<table>'+rows.map((r,idx)=>{const cells=r.trim().replace(/^\||\|$/g,'').split('|').map(c=>inline(c.trim()));const tag=idx===0?'th':'td';return '<tr>'+cells.map(c=>`<${tag}>${c}</${tag}>`).join('')+'</tr>'}).join('')+'</table>');table=[]}for(const line of lines){if(line.trim().startsWith('```')){flushTable();if(inCode){flushCode();inCode=false}else{flushPara();inCode=true}continue}if(inCode){code.push(line);continue}if(line.includes('|')&&line.trim().startsWith('|')){flushPara();table.push(line);continue}else{flushTable()}if(!line.trim()){flushPara();continue}let m=line.match(/^(#{1,3})\s+(.+)$/);if(m){flushPara();out.push(`<h${m[1].length}>${inline(m[2])}</h${m[1].length}>`);continue}if(/^[-*]\s+/.test(line.trim())){flushPara();out.push('<p>• '+inline(line.trim().replace(/^[-*]\s+/,''))+'</p>');continue}para.push(line.trim())}flushTable();flushPara();return out.join('\n')}
-fetch(sourcePath,{cache:'no-store'}).then(res=>{if(!res.ok)throw new Error(res.status);return res.text()}).then(md=>{articleEl.innerHTML=mdToHtml(md);articleEl.hidden=false;statusEl.textContent='Source Markdown loaded.';sourceEl.innerHTML='Source Markdown: <a href="'+sourcePath+'">'+sourcePath+'</a>'}).catch(()=>{statusEl.textContent='Reader is ready. Add settlement_gate_minimal_system_backup_xy.md to the repo root and this page will render the full source automatically.';sourceEl.innerHTML='Expected source Markdown: <strong>'+sourcePath+'</strong>'});
+async function fetchText(path){const res=await fetch(path,{cache:'no-store'});if(!res.ok)throw new Error(path+' '+res.status);return await res.text()}
+async function findSource(){for(const path of preferred){try{return {path,md:await fetchText(path)}}catch(e){}}
+  const api='https://api.github.com/repos/'+repo+'/contents?ref=main';
+  const res=await fetch(api,{cache:'no-store'});if(!res.ok)throw new Error('contents '+res.status);
+  const files=await res.json();
+  const matches=files.filter(f=>f.type==='file'&&/\.md$/i.test(f.name)).filter(f=>{const n=f.name.toLowerCase();return (n.includes('minimal')&&n.includes('system'))||(n.includes('backup')&&n.includes('xy'))||(n.includes('settlement')&&n.includes('minimal'));});
+  for(const f of matches){try{return {path:f.name,md:await fetchText(f.name)}}catch(e){}}
+  throw new Error('no matching markdown');
+}
+findSource().then(({path,md})=>{articleEl.innerHTML=mdToHtml(md);articleEl.hidden=false;statusEl.textContent='Source Markdown loaded: '+path;sourceEl.innerHTML='Source Markdown: <a href="'+path+'">'+path+'</a>'}).catch(()=>{statusEl.textContent='Reader is ready, but it could not discover the Minimal System Markdown by filename yet.';sourceEl.innerHTML='Expected a root Markdown file whose name includes minimal/system or backup/xy.'});
 </script>
 </body>
 </html>
