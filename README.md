@@ -1,5 +1,7 @@
 # Settlement Gate
 
+**Meeting page:** [Anthony / PorterShed deck and speaker notes](docs/index.html)
+
 ## Why “Settlement Gate”?
 
 Because every completed sentence settles something.
@@ -77,6 +79,7 @@ The receipt is not a summary. It is the audit trace of what the sentence has set
 05_validation/          Future validation protocols and pressure tests
 06_product/             Product hypotheses, use cases, receipt schema, commercial questions
 07_private/             Sensitive planning notes, advisor questions, exposure log
+docs/                   Meeting landing page for deck and notes
 ```
 
 See [`REPO_WIREFRAME.md`](REPO_WIREFRAME.md) for the upload and extraction map.
